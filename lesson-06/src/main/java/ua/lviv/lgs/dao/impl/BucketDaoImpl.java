@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import ua.lviv.lgs.dao.BucketDao;
 import ua.lviv.lgs.domain.Bucket;
 import ua.lviv.lgs.utils.ConnectionUtils;
@@ -19,6 +21,8 @@ public class BucketDaoImpl implements BucketDao {
 	private static String READ_BY_ID = "select * from bucket where id =?";
 	private static String DELETE_BY_ID = "delete from bucket where id=?";
 
+	private static Logger LOGGER = Logger.getLogger(BucketDaoImpl.class);
+	
 	private Connection connection;
 	private PreparedStatement preparedStatement;
 
@@ -40,12 +44,13 @@ public class BucketDaoImpl implements BucketDao {
 			rs.next();
 			bucket.setId(rs.getInt(1));
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 
 		return bucket;
 	}
-
+	
+	
 	@Override
 	public Bucket read(Integer id) {
 		Bucket bucket = null;
@@ -63,7 +68,7 @@ public class BucketDaoImpl implements BucketDao {
 			bucket = new Bucket(bucketId, userId, productId, purchaseDate);
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 
 		return bucket;
@@ -81,7 +86,7 @@ public class BucketDaoImpl implements BucketDao {
 			preparedStatement.setInt(1, id);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 	}
 
@@ -100,7 +105,7 @@ public class BucketDaoImpl implements BucketDao {
 				bucketRecords.add(new Bucket(bucketId, userId, productId, purchaseDate));
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		
 		return bucketRecords;

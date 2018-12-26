@@ -3,22 +3,32 @@ package ua.lviv.lgs.service.impl;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import ua.lviv.lgs.dao.ProductDao;
 import ua.lviv.lgs.dao.impl.ProductDaoImpl;
 import ua.lviv.lgs.domain.Product;
 import ua.lviv.lgs.service.ProductService;
 
 public class ProductServiceImpl implements ProductService {
+	private static Logger LOGGER = Logger.getLogger(ProductServiceImpl.class);
+	private static ProductService productServiceImpl;
 	private ProductDao productDao;
 
-	public ProductServiceImpl() {
-
+	private ProductServiceImpl() {
 		try {
 			productDao = new ProductDaoImpl();
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
+		}
+	}
+
+	public static ProductService getProductService() {
+		if (productServiceImpl == null) {
+			productServiceImpl = new ProductServiceImpl();
 		}
 
+		return productServiceImpl;
 	}
 
 	@Override
