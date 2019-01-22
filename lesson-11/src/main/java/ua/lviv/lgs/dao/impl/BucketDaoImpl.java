@@ -14,9 +14,7 @@ import org.apache.log4j.Logger;
 import ua.lviv.lgs.dao.BucketDao;
 import ua.lviv.lgs.domain.Bucket;
 import ua.lviv.lgs.utils.ConnectionUtils;
-
-
-//This class is used for storing Buckets modes to dataBase
+//some comment
 public class BucketDaoImpl implements BucketDao {
 	private static String READ_ALL = "select * from bucket";
 	private static String CREATE = "insert into bucket(`user_id`, `product_id`, `purchase_date`) values (?,?,?)";
