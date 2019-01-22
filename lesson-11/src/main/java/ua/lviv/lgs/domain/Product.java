@@ -1,5 +1,6 @@
 package ua.lviv.lgs.domain;
 
+//This product model
 public class Product {
 	private Integer id;
 	private String name;

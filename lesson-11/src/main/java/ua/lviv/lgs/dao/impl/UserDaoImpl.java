@@ -14,6 +14,7 @@ import ua.lviv.lgs.dao.UserDao;
 import ua.lviv.lgs.domain.User;
 import ua.lviv.lgs.utils.ConnectionUtils;
 
+//this is Dao for user model
 public class UserDaoImpl implements UserDao {
 
 	private static String READ_ALL = "select * from user";

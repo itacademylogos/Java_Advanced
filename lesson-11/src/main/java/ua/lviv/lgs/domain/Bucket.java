@@ -1,7 +1,7 @@
 package ua.lviv.lgs.domain;
 
 import java.util.Date;
-
+// ths is Bucket model
 public class Bucket {
 	private Integer id;
 	private Integer userId;
