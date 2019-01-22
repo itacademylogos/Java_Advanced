@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 import ua.lviv.lgs.dao.ProductDao;
 import ua.lviv.lgs.domain.Product;
 import ua.lviv.lgs.utils.ConnectionUtils;
-
+// this is commit that we need to revert
 public class ProductDaoImpl implements ProductDao {
 
 	private static String READ_ALL = "select * from product";
