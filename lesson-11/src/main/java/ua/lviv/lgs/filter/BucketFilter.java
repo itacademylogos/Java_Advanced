@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebFilter;
 import ua.lviv.lgs.domain.UserRole;
 import ua.lviv.lgs.shared.FilterService;
 
-@WebFilter("/bucket.jsp")
+@WebFilter("/bucket.jsp")// very good endpoint naming
 public class BucketFilter implements Filter {
 	
 	private FilterService filterService = FilterService.getFilterService();
