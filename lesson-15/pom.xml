@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>lesson-14</groupId>
-	<artifactId>lesson-14</artifactId>
+	<groupId>lesson-15</groupId>
+	<artifactId>lesson-15</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>lesson-14</name>
+	<name>lesson-15</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -16,7 +16,6 @@
 	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -26,12 +25,10 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<!-- <version>4.2.1.Final</version> -->
-				<version>4.3.10.Final</version>
+			<version>4.2.1.Final</version>
 		</dependency>
-
 	</dependencies>
-	
+
 	<build>
 		<finalName>lesson-07</finalName>
 		<plugins>

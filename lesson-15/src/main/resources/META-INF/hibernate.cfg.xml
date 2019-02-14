@@ -5,15 +5,21 @@
 <hibernate-configuration>
 	<session-factory>
 
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_mappings</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-		<mapping resource="Person.hbm.xml" />
-		<mapping resource="Car.hbm.xml" />
+		<mapping class="ua.lviv.lgs.one_to_one.Customer" />
+		<mapping class="ua.lviv.lgs.one_to_one.FinancialOperation" />
+
+		<mapping class="ua.lviv.lgs.one_to_many.Item" />
+		<mapping class="ua.lviv.lgs.one_to_many.Cart" />
+
+		<mapping class="ua.lviv.lgs.many_to_many.Group" />
+		<mapping class="ua.lviv.lgs.many_to_many.User" />
 	</session-factory>
 </hibernate-configuration>
