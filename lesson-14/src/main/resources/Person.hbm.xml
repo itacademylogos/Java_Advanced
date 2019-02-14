@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="ua.lviv.lgs.hbm.xml.Person" table="person">
+		<id name="id" type="int" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="firstName" column="first_name" type="string" />
+		<property name="lastName" column="last_name" type="string" />
+		<property name="age" column="age" type="int" />
+		
+		<set name="cars" table="person_car" inverse="false" lazy="true" fetch="select" cascade="all" >
+			<key>
+				<column name="person_id" not-null="true"></column>
+			</key>
+			<many-to-many entity-name="ua.lviv.lgs.hbm.xml.Car">
+				<column name="car_id" not-null="true"></column>
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
