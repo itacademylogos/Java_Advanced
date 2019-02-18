@@ -1,4 +1,4 @@
-package com.ua.lviv.lgs.lesson18;
+package ua.lviv.lgs.lesson18;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
